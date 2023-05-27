@@ -1,0 +1,94 @@
+
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+   
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        {% block title %}
+
+        {% endblock %}
+
+    </title>
+    {% block favicon %}
+        {% include "home/common.html" %} 
+    {% endblock %}
+    {% block stylesinc %}
+      
+    {% endblock %}
+
+    <link rel="stylesheet" href="{% static 'home/css/style.css' %}">  
+    <link rel="stylesheet" href="{% static 'accounts/css/login_anim.css' %}">  
+   
+</head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand ms-3" href="{% url 'home' %}">UpNotes💡</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+             
+              <li class="nav-item">
+                <a class="nav-link" href="#">About Us </a>
+              </li>
+              
+            
+            </ul>
+            
+              <!-- <button class="btn btn-outline-warning" type="submit">Login</button> -->
+              
+                {% if request.user.is_authenticated %}
+                   <div class="dropdown">
+                    <button class="btn btn-outline-warning dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      {{request.user}}
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="{% url 'logout_page' %}">Logout</a></li>
+                    </ul>
+                  </div>
+
+                {% else %}
+                <button type="button" class="btn btn-outline-warning" >
+                  <a href="{% url 'login_page' %}" class="text-decoration-none text-black">Login</a>
+                </button>
+                {% endif %}
+
+             
+            
+          </div>
+        </div>
+      </nav>
+
+      
+
+    {% block home %}
+
+    {% endblock %}
+
+    <!-- wave -->
+    <div>
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+      viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+      <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+      </defs>
+      <g class="parallax">
+      <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,193,7,0.7" />
+      <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,193,7,0.5)" />
+      <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,193,7,0.3)" />
+      <use xlink:href="#gentle-wave" x="48" y="7" fill="#ffc107" />
+      </g>
+      </svg>
+    </div>
+      
+   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+</body>
+</html>
+   

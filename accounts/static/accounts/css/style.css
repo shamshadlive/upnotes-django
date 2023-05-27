@@ -1,0 +1,11 @@
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+.base-small-font{
+    font-size: 0.8rem;
+}
+.error-msg{
+    color: red;
+    font-size: 0.8rem;
+}

@@ -1,0 +1,44 @@
+
+{% extends "home/base.html" %}
+
+
+{% load static %}
+{% block title %}
+Home
+{% endblock %}
+
+
+
+{% block home %}
+<div class="container">
+    
+    <div class="row mt-3">
+        <div class="col-12 col-xl-6">
+            <img src="{% static 'home\images\notes_head.png' %}" class="mw-100 mt-2" alt="head_notes">
+        </div>
+        <div class="col-12 col-xl-6 p-3">
+            <h1 class="">Write Down Your Ideas 💡</h1>
+            <h6 class="orange-bold-font">#ideas #uptodate #forgeteverything</h6>
+            <p class="base-light-para mt-3">
+                
+                "Your digital notepad for capturing ideas, reminders, and to-do lists. Organize, sync, and access your notes seamlessly across devices. Stay productive and never forget important details again."
+                
+            </p>
+         
+
+            <button class="btn btn-warning ">
+                
+                <a href="{% url 'notes' %}" class="text-decoration-none text-black">Note Something </a>
+                
+                
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"></path>
+                    </svg>
+            </button>
+        </div>
+    </div>
+
+
+</div>
+{% endblock %}
+

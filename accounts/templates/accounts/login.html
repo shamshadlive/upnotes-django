@@ -1,0 +1,86 @@
+{% extends "accounts/base.html" %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% block login %}
+
+<div class="header">
+
+  <!--Content before waves-->
+
+
+  <div class="container col-xl-4 col-10 pt-4 mb-5">
+    {% if messages %}
+    {% for message in messages %}
+    <div
+      class="alert alert-dismissible fade show {% if message.tags == 'error' %} alert-danger {% else %} alert-dark {% endif %}"
+      role="alert">
+      <strong>{{message.tags|title}} !</strong> {{message}}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    {% endfor %}
+
+    {% endif %}
+
+
+    <div class="card mb-3 ">
+      <div class="card-header bg-dark text-center ">
+        <h4 class="text-white">LOGIN 👌</h4>
+      </div>
+      <div class="card-body">
+
+        <form method="post">
+          {% csrf_token %}
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Username</label>
+            <input type="text" name="username" class="form-control" id="exampleInputEmail1"
+              aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+          </div>
+
+          <div>
+            <button type="submit" class="btn btn-warning w-100 ">Login Now</button>
+          </div>
+        </form>
+
+        <p class="base-small-font mt-2">Don't Have Account?
+          <a href="{% url 'register' %}">Register Here</a>
+        </p>
+
+
+      </div>
+    </div>
+  </div>
+
+  <!--Waves Container-->
+  <div>
+    <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+      viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+      </defs>
+      <g class="parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+        <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+        <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+      </g>
+    </svg>
+  </div>
+  <!--Waves end-->
+
+</div>
+<!--Header ends-->
+
+<!--Content starts-->
+
+<!--Content ends-->
+
+
+{% endblock %}
