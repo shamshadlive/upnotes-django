@@ -1,12 +1,12 @@
 {% extends "accounts/base.html" %}
 
 {% block title %}
-Login
+Admin Login
 {% endblock %}
 
 {% block login %}
 
-<div class="header-login">
+<div class="header-admin">
 
   <!--Content before waves-->
 
@@ -27,8 +27,8 @@ Login
 
 
     <div class="card mb-3 ">
-      <div class="card-header bg-dark text-center ">
-        <h4 class="text-white">LOGIN 👌</h4>
+      <div class="card-header bg-danger text-center ">
+        <h4 class="text-white">Admin LOGIN 👌</h4>
       </div>
       <div class="card-body">
 
@@ -45,12 +45,12 @@ Login
           </div>
 
           <div>
-            <button type="submit" class="btn btn-warning w-100 ">Login Now</button>
+            <button type="submit" class="btn btn-danger w-100 ">Login Now</button>
           </div>
         </form>
 
         <p class="base-small-font mt-2">Don't Have Account?
-          <a href="{% url 'register' %}">Register Here</a>
+          <a href="{% url 'admin_register' %}">Register Here</a>
         </p>
 
 
@@ -58,22 +58,22 @@ Login
     </div>
   </div>
 
-  <!--Waves Container-->
-  <div>
+<!--Waves Container-->
+<div>
     <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-      viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-      <defs>
-        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-      </defs>
-      <g class="parallax">
-        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
-        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
-        <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
-        <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
-      </g>
+    viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+    <defs>
+    <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+    </defs>
+    <g class="parallax">
+    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+    <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+    </g>
     </svg>
-  </div>
-  <!--Waves end-->
+    </div>
+    <!--Waves end-->
 
 </div>
 <!--Header ends-->

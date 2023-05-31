@@ -1,0 +1,94 @@
+{% extends "notes/base.html" %}
+
+{% block title %}
+Register
+{% endblock %}
+
+{% block notes %}
+
+<div class="">
+<!-- {{form}} -->
+<!--Content before waves-->
+
+<div class="container col-xl-4 col-10 pt-4 mb-5">
+
+    {% if messages %}
+  {% for message in messages %}
+  <div
+    class="alert alert-dismissible fade show {% if message.tags == 'error' %} alert-danger {% else %} alert-dark {% endif %}"
+    role="alert">
+    <strong>{{message.tags|title}} !</strong> {{message}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+
+  {% endfor %}
+
+  {% endif %}
+
+
+  <div class="card mb-3 " >
+    <div class="card-header bg-dark text-center "><h4 class="text-white">Update {{form.first_name.value}}</h4> </div>
+    <div class="card-body">
+     
+      <form method="post">
+        {% csrf_token %}
+
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Name</label>
+          <input type="text" name="first_name"  class="form-control" value={% firstof form.first_name.value '' %}>
+         
+        </div>
+        
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Username</label>
+          <input type="text" name="username" class="form-control" value={% firstof form.username.value '' %}>
+          <div id="emailHelp" class="form-text error-msg">{{form.username.errors}}</div>
+          
+        </div>
+
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="email" name="email" class="form-control" value={% firstof form.email.value '' %}>
+         
+        </div>
+
+        <div class="form-check">
+            
+            {{form.is_superuser  }}<label class="" for="is_superuser">
+              Super User Status
+            </label>
+          </div>
+          <div class="form-check">
+            {{form.is_active  }}
+            <label class="" for="is_active">
+              Active
+              
+
+            </label>
+          </div>
+       
+        <div>
+          <button type="submit" class="btn btn-warning w-100">Update  Now</button>
+      </div>
+      </form>
+      <p class="base-small-font mt-2">
+        <a  href="{{request.META.HTTP_REFERER}}">Go Back</a>
+        <a class="text-danger" href="{% url 'admin_control_userdelete' pk %}">Delete</a>
+        </p>
+    </div>
+    
+    
+  </div>
+</div>
+
+
+
+</div>
+<!--Header ends-->
+
+<!--Content starts-->
+
+<!--Content ends-->
+  
+
+{% endblock %}

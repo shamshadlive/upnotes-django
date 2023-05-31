@@ -1,18 +1,18 @@
 {% extends "accounts/base.html" %}
 
 {% block title %}
-Register
+Admin Register
 {% endblock %}
 
 {% block register %}
 
-<div class="header-login">
+<div class="header-admin">
 
 <!--Content before waves-->
 
 <div class="container col-xl-4 col-10 pt-4 mb-5">
   <div class="card mb-3 " >
-    <div class="card-header bg-dark text-center "><h4 class="text-white">Register 😃</h4> </div>
+    <div class="card-header bg-danger text-center "><h4 class="text-white">Admin Register 😃</h4> </div>
     <div class="card-body">
      
       <form method="post">
@@ -43,11 +43,11 @@ Register
 
         
         <div>
-          <button type="submit" class="btn btn-warning w-100">Register  Now</button>
+          <button type="submit" class="btn btn-danger w-100">Register  Now</button>
       </div>
       </form>
       <p class="base-small-font mt-2">Already Have Account? 
-        <a  href="{% url 'login_page' %}">Login Here</a>
+        <a  href="{% url 'admin_login' %}">Login Here</a>
         </p>
     </div>
   </div>

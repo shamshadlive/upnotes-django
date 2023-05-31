@@ -1,9 +1,16 @@
 
-.header {
+.header-login {
   position:relative;
   background: linear-gradient(60deg, rgb(255, 157, 0) 0%, rgb(255, 234, 0) 100%);
   color:white;
 }
+.header-admin {
+  position:relative;
+  background: linear-gradient(60deg, rgb(207, 14, 1) 0%, rgba(255, 0, 0, 0.856) 100%);
+  color:white;
+ 
+}
+
 .logo {
   width:50px;
   fill:white;
@@ -37,7 +44,7 @@
 
 .content {
   position:relative;
-  height:20vh;
+  height:95vh;
   text-align:center;
   background-color: white;
 }

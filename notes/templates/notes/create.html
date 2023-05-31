@@ -1,0 +1,51 @@
+{% extends "notes/base.html" %}
+
+{% block notes %}
+
+<!-- <div class="d-flex justify-content-center mt-2"> 
+    <div>
+      <h2>Welcome Back !
+      {{request.user|title}}
+      </h2>
+  </div>
+  </div> -->
+  
+  <hr>
+  <form method="post">
+    {% csrf_token %}
+
+  <div class="container col-xl-6 col-8 ">
+    <div class="row">
+      
+      <div class="mb-3">
+        <input type="text" name="title" maxlength="50" required="" id="id_title" placeholder="Title" class="form-control">
+      </div>
+      <div class="mb-3">
+    
+        <textarea name="body" id="id_body" maxlength="49" rows="20" placeholder="Note Something.." class="form-control" id="exampleInputPassword1"></textarea>
+      </div>
+      
+
+      <div class="row">
+        <div class="col-11">
+          <button type="submit" class="btn btn-warning w-100">Create  Now</button>
+
+        </div>
+        <div class="col-1">
+
+          <a href="{{request.META.HTTP_REFERER}}" class="btn btn-outline-danger">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+            </svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+  </form>
+{% endblock %}

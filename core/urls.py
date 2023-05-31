@@ -24,4 +24,5 @@ urlpatterns = [
     path('', include("notes.urls")),
     
     
+    
 ]
