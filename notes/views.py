@@ -138,12 +138,6 @@ def admincontrol_noteDelete(request,pk):
     return redirect('admin_control')
 
 
-
-
-
-
-
-
 @check_isadmin
 def admincontrol_userCreate(request):
     form = AdminUserForm()

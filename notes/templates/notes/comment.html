@@ -1,0 +1,95 @@
+<!-- Database -->
+     database is an organized collection of data  
+         efficiently manage, store, retrieve, and update large amounts of information.
+<!-- SQL -->
+    SQL (Structured Query Language) is a programming language
+    (RDBMS)
+    MySQL, Oracle Database, SQL Server, PostgreSQL, and SQLite
+
+<!-- capabilities of SQL: -->
+
+    Data Definition Language (DDL): 
+        creating and modifying the structure of a database, 
+        such as creating tables, 
+        defining relationships between tables, and 
+        setting up constraints.
+       
+    Data Manipulation Language (DML): 
+        interacting with the data within the database.
+        INSERT ,DELTE,UPDATE,SELCT
+    
+    Data Control Language (DCL): 
+        including granting and revoking permissions to users and roles
+    
+    Data Query Language (DQL): 
+        querying and retrieving data from the database.
+    
+<!-- ACID properties -->
+        Atomicity -- It means that either all the operations within a transaction are successfully completed, or none of them are.
+        Consistency -- When a transaction is executed, it should preserve constraints 
+        Isolation -- concurrent transactions do not interfere with each other. 
+        Durability -- Non Volatile Data
+              
+<!-- Normalisation -->
+    helps eliminate data redundancy and improve data integrity
+    1NF- ensures that each field has a single value. In 
+    2NF - all data must depend on primary key 
+    3NF - Primary key must define  all non key colums
+<!-- Constrains -->
+    data integrity and maintain consistency
+    PK,FK,UNIQUE,NOT NULL
+
+<!-- Relationships -->
+    One-to-One (1:1) Relationship: EmployeeID (primary key) and EmployeeName
+    One-to-Many (1:N) Relationship: Each department muliple employee
+    Many-to-Many (N:N) Relationship: muliple student mulpple courses
+
+
+<!-- Joins -->
+    INNER
+    LEFT JOIN 
+    Riht Join
+
+    syntx : SELECT column_list
+            FROM table1
+            INNER JOIN table2 ON join_condition;
+
+
+<!-- 3-Schema architecture -->
+
+    Internal Schema : how the data is physically stored 
+    Logical Schema :  relationships between different entities, their attributes
+    External Schema : user's view or perspective of the database.
+
+
+<!-- Indexing -->
+     improve the performance of database
+     creating data structures that allow for quick and efficient data retrieval
+     BST / HASH
+     Clustered Index: 
+        table can have only one clustered index
+
+        CREATE INDEX index_name ON table_name (column_name);
+
+<!-- Aggregate functions -->
+    COUNT   /   SUM
+    AVG     /   MAX
+    MIN
+
+<!-- Scalar functions -->
+    Upper  / Lower
+    Round
+
+
+Foreign key Primary key
+
+<!-- Closure -->
+    With A--> b
+    like wise we can get one from anothre how much
+
+Groupby
+Having
+
+
+Transactions 
+
